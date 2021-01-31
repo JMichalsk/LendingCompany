@@ -1,4 +1,4 @@
-﻿namespace LendingCompany.Domain.Model.Messages
+﻿namespace LendingCompany.Domain.Model
 {
     public class BaseResponse<T>
     {

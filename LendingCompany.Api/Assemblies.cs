@@ -2,6 +2,6 @@
 {
     public static class Assemblies
     {
-        public static string BusinessLogicAssembly = "LendingCompany.BusinessLogicAssembly";
+        public static string BusinessLogicAssembly = "LendingCompany.BL";
     }
 }

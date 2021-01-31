@@ -11,5 +11,10 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LendingCompany.BL\LendingCompany.BL.csproj" />
+    <ProjectReference Include="..\LendingCompany.Infrastructure\LendingCompany.Infrastructure.csproj" />
+  </ItemGroup>
+
 
 </Project>
