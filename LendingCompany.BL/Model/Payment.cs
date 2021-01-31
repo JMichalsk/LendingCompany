@@ -12,6 +12,10 @@ namespace LendingCompany.BL.Model
             LoanId = loadId;
         }
 
+        private Payment()
+        {
+        }
+
         private double _paidAmount;
         public double BaseAmount { get; }
         public double PenaltyAmount { get; set; }

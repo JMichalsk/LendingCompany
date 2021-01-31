@@ -11,7 +11,7 @@ namespace LendingCompany.Api.Extensions
         public static void AddInMemoryDatabase(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<LendingCompanyDataContext>(options => 
-                options.UseInMemoryDatabase(configuration.GetSection("DatabaseConnections")
+                options.UseInMemoryDatabase(configuration.GetSection("DatabaseConnections:MsSqlConnection")
                     .Get<MsSqlConnection>()
                     .DatabaseName));
         }

@@ -21,6 +21,8 @@ namespace LendingCompany.Api
         {
             services.AddInMemoryDatabase(Configuration);
             services.AddMediator();
+            services.AddRepositories();
+            services.AddServices();
             services.AddAutoMapper();
             services.AddControllers();
         }

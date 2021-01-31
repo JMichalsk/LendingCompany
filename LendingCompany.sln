@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingCompany.Api", "LendingCompany.Api\LendingCompany.Api.csproj", "{E77E0115-EE6D-44A8-9D87-67764533D5EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.Api", "LendingCompany.Api\LendingCompany.Api.csproj", "{E77E0115-EE6D-44A8-9D87-67764533D5EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingCompany.Domain", "LendingCompany.Domain\LendingCompany.Domain.csproj", "{F91126C9-A2D3-462B-B7DB-6C598A97A556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.Domain", "LendingCompany.Domain\LendingCompany.Domain.csproj", "{F91126C9-A2D3-462B-B7DB-6C598A97A556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingCompany.BL", "LendingCompany.BL\LendingCompany.BL.csproj", "{1A615114-1AB4-4DBB-B2A6-042C3A676010}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.BL", "LendingCompany.BL\LendingCompany.BL.csproj", "{1A615114-1AB4-4DBB-B2A6-042C3A676010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingCompany.Infrastructure", "LendingCompany.Infrastructure\LendingCompany.Infrastructure.csproj", "{A66C48D7-551F-4188-BAF5-A5912DAD75E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.Infrastructure", "LendingCompany.Infrastructure\LendingCompany.Infrastructure.csproj", "{A66C48D7-551F-4188-BAF5-A5912DAD75E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingCompany.UnitTests", "LendingCompany.UnitTests\LendingCompany.UnitTests.csproj", "{B908B15B-62EF-4D98-8B33-16B06C94FDE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingCompany.UnitTests", "LendingCompany.UnitTests\LendingCompany.UnitTests.csproj", "{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{A66C48D7-551F-4188-BAF5-A5912DAD75E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A66C48D7-551F-4188-BAF5-A5912DAD75E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A66C48D7-551F-4188-BAF5-A5912DAD75E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B908B15B-62EF-4D98-8B33-16B06C94FDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B908B15B-62EF-4D98-8B33-16B06C94FDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B908B15B-62EF-4D98-8B33-16B06C94FDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B908B15B-62EF-4D98-8B33-16B06C94FDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

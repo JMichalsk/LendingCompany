@@ -14,16 +14,21 @@ namespace LendingCompany.BL.Model
             EstimatedRepaymentDate = CreationDate.AddMonths(numberOfInstallments);
             Amount = amount;
         }
+
+        private Loan()
+        {
+        }
+
         public DateTime CreationDate { get; }
         public DateTime EstimatedRepaymentDate { get; }
         public int NumberOfInstallments { get; }
         public double Amount { get; }
+        public double Interest { get; }
         public double PaidAmount { get; set; }
-        public bool IsRepaid { get; set; }
         public int TotalDaysOfDelay { get; set; }
-        public double Interest { get; set; }
         public decimal PenaltyAmount { get; set; }
         public DateTime? ActualRepaymentDate { get; set; }
+        public bool IsRepaid { get; set; }
         public IList<Payment> Payments { get; set; }
     }
 }

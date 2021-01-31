@@ -32,10 +32,10 @@ namespace LendingCompany.BL.Handlers
                 var loan = new Loan(request.NumberOfInstallments, request.Interest, request.Amount);
                 var loanId = await _loanRepository.CreateLoanAsync(loan);
 
-                var payments = await _loanService.CalculatePayments(loan);
-                var paymentDtos = _mapper.Map<IEnumerable<PaymentDto>>(payments);
+                var loanWithPayments = await _loanService.CalculatePayments(loan);
+                var paymentDtos = _mapper.Map<IEnumerable<PaymentDto>>(loanWithPayments.Payments);
 
-                var loanCost = loan.Amount * loan.Interest / 100;
+                var loanCost = _loanService.CalculateLoanCost(loan);
 
                 return new BaseResponse<CreateLoanDto>(new CreateLoanDto()
                 {

@@ -12,16 +12,18 @@ namespace LendingCompany.BL.Services
         private readonly IPaymentService _paymentService;
         private readonly IUnitOfWork _uow;
 
-        public LoanService(IPaymentService paymentService)
+        public LoanService(IPaymentService paymentService, IUnitOfWork uow)
         {
             _paymentService = paymentService;
+            _uow = uow;
         }
 
-        public async Task<IList<Payment>> CalculatePayments(Loan loan)
+        public async Task<Loan> CalculatePayments(Loan loan)
         {
-            var installmentBaseAmount = 
-                (loan.Amount + loan.Amount * (loan.Interest / 100)) / loan.NumberOfInstallments;
-            installmentBaseAmount = Math.Round(installmentBaseAmount, 2);
+            var totalAmount = loan.Amount + loan.Amount * (loan.Interest / 100);
+            var installmentBaseAmount =
+                 totalAmount  / loan.NumberOfInstallments;
+            installmentBaseAmount = Math.Floor(installmentBaseAmount * 100) / 100;
 
             var payments = new List<Payment>();
 
@@ -30,17 +32,22 @@ namespace LendingCompany.BL.Services
                 var baseAmount = installmentBaseAmount;
                 if (i == loan.NumberOfInstallments)
                 {
-                    if (installmentBaseAmount * loan.NumberOfInstallments < loan.Amount)
+                    if (installmentBaseAmount * loan.NumberOfInstallments < totalAmount)
                     {
-                        baseAmount = installmentBaseAmount + loan.Amount -
-                                     installmentBaseAmount * loan.NumberOfInstallments;
+                        baseAmount = totalAmount - installmentBaseAmount * (loan.NumberOfInstallments - 1) ;
                     }
                 }
                 var payment = await _paymentService.CreatePayment(baseAmount, loan.CreationDate, loan.Id);
                 payments.Add(payment);
             }
             await _uow.CompleteAsync();
-            return payments;
+            loan.Payments = payments;
+            return loan;
+        }
+
+        public double CalculateLoanCost(Loan loan)
+        {
+            return loan.Amount * loan.Interest / 100;
         }
     }
 }

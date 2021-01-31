@@ -6,6 +6,7 @@ namespace LendingCompany.BL.Services.Interfaces
 {
     public interface ILoanService
     {
-        Task<IList<Payment>> CalculatePayments(Loan loan);
+        Task<Loan> CalculatePayments(Loan loan);
+        double CalculateLoanCost(Loan loan);
     }
 }
