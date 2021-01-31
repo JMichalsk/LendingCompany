@@ -27,7 +27,7 @@ namespace LendingCompany.Api.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<ActionResult<BaseResponse<CreateLoanDto>>> Pay(PayForLoanCommand request)
+        public async Task<ActionResult<BaseResponse<PayForLoanDto>>> Pay(PayForLoanCommand request)
         {
             var result = await _mediator.Send(request);
             if (!result.Success)
