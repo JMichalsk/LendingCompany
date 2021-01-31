@@ -6,17 +6,17 @@ namespace LendingCompany.BL.Model
 {
     public class Loan : Entity
     {
-        public Loan(int numberOfInstalments, double interest, double amount)
+        public Loan(int numberOfInstallments, double interest, double amount)
         {
             CreationDate = DateTime.UtcNow;
-            NumberOfInstalments = numberOfInstalments;
+            NumberOfInstallments = numberOfInstallments;
             Interest = interest;
-            EstimatedRepaymentDate = CreationDate.AddMonths(numberOfInstalments);
+            EstimatedRepaymentDate = CreationDate.AddMonths(numberOfInstallments);
             Amount = amount;
         }
         public DateTime CreationDate { get; }
         public DateTime EstimatedRepaymentDate { get; }
-        public int NumberOfInstalments { get; }
+        public int NumberOfInstallments { get; }
         public double Amount { get; }
         public double PaidAmount { get; set; }
         public bool IsRepaid { get; set; }

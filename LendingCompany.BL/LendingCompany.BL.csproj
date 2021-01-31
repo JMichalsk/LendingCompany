@@ -8,4 +8,8 @@
     <ProjectReference Include="..\LendingCompany.Domain\LendingCompany.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\Messages\Queries\" />
+  </ItemGroup>
+
 </Project>

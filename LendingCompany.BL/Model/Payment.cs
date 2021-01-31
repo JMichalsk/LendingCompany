@@ -19,7 +19,7 @@ namespace LendingCompany.BL.Model
             get => _paidAmount;
             private set
             {
-                IsPaid = value >= BaseAmount;
+                IsPaid = value >= BaseAmount + PaidAmount;
                 _paidAmount = value;
             }
         }
