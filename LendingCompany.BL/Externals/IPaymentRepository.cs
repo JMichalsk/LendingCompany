@@ -4,8 +4,8 @@ using LendingCompany.BL.Model;
 
 namespace LendingCompany.BL.Externals
 {
-    public interface ILoanRepository
+    public interface IPaymentRepository
     {
-        Task<Guid> CreateLoanAsync(Loan loan);
+        Task<Guid> CreatePaymentAsync(Payment payment);
     }
 }

@@ -5,17 +5,17 @@ using LendingCompany.BL.Model;
 
 namespace LendingCompany.Infrastructure.Repositories
 {
-    public class LoanRepository : ILoanRepository
+    public class PaymentRepository : IPaymentRepository
     {
         private readonly LendingCompanyDataContext _dbContext;
-        public LoanRepository(LendingCompanyDataContext dbContext)
+        public PaymentRepository(LendingCompanyDataContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public async Task<Guid> CreateLoanAsync(Loan loan)
+        public async Task<Guid> CreatePaymentAsync(Payment payment)
         {
-            var result = await _dbContext.Loan.AddAsync(loan);
+            var result = await _dbContext.Payment.AddAsync(payment);
             return result.Entity.Id;
         }
     }

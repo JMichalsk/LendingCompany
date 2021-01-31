@@ -5,10 +5,11 @@ namespace LendingCompany.BL.Model
 {
     public class Payment : Entity
     {
-        public Payment(double baseAmount, DateTime finalPaymentDate)
+        public Payment(double baseAmount, DateTime finalPaymentDate, Guid loadId)
         {
             BaseAmount = baseAmount;
             FinalPaymentDate = finalPaymentDate;
+            LoanId = loadId;
         }
 
         private double _paidAmount;
@@ -26,6 +27,7 @@ namespace LendingCompany.BL.Model
         public DateTime LastPaymentDate { get; private set; }
         public DateTime FinalPaymentDate { get; }
         public bool IsPaid { get; private set; }
+        public Guid LoanId { get; }
 
         public double Pay(double amount)
         {
