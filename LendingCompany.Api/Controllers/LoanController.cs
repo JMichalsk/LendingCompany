@@ -25,5 +25,14 @@ namespace LendingCompany.Api.Controllers
                 return BadRequest(result);
             return result;
         }
+
+        [HttpPost("[action]")]
+        public async Task<ActionResult<BaseResponse<CreateLoanDto>>> Pay(PayForLoanCommand request)
+        {
+            var result = await _mediator.Send(request);
+            if (!result.Success)
+                return BadRequest(result);
+            return result;
+        }
     }
 }

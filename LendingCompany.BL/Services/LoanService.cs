@@ -37,7 +37,7 @@ namespace LendingCompany.BL.Services
                         baseAmount = totalAmount - installmentBaseAmount * (loan.NumberOfInstallments - 1) ;
                     }
                 }
-                var payment = await _paymentService.CreatePayment(baseAmount, loan.CreationDate, loan.Id);
+                var payment = await _paymentService.CreatePayment(loan.Id, baseAmount, loan.CreationDate);
                 payments.Add(payment);
             }
             await _uow.CompleteAsync();

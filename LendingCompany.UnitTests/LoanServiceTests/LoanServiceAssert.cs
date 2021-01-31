@@ -1,8 +1,8 @@
-﻿using FluentAssertions;
+﻿using System.Collections.Generic;
+using FluentAssertions;
 using LendingCompany.BL.Model;
-using System.Collections.Generic;
 
-namespace LendingCompany.UnitTests
+namespace LendingCompany.UnitTests.LoanServiceTests
 {
     public class LoanServiceAssert
     {

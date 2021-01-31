@@ -6,6 +6,7 @@ namespace LendingCompany.BL.Services.Interfaces
 {
     public interface IPaymentService
     {
-        Task<Payment> CreatePayment(double baseAmount, DateTime loanCreationDate, Guid loanId);
+        Task<Payment> CreatePayment(Guid loanId, double baseAmount, DateTime loanCreationDate);
+        Task<double> FoundPayment(Guid loanId, double amount);
     }
 }

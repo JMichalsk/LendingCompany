@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using LendingCompany.BL.Externals;
 using LendingCompany.BL.Model;
@@ -17,6 +20,11 @@ namespace LendingCompany.Infrastructure.Repositories
         {
             var result = await _dbContext.Payment.AddAsync(payment);
             return result.Entity.Id;
+        }
+
+        public IList<Payment> GetPaymentsWhere(Expression<Func<Payment, bool>> expression)
+        {
+            return _dbContext.Payment.Where(expression).ToList();
         }
     }
 }
