@@ -30,5 +30,7 @@ namespace LendingCompany.BL.Model
         public DateTime? ActualRepaymentDate { get; set; }
         public bool IsRepaid { get; set; }
         public IList<Payment> Payments { get; set; }
+        public Guid PersonId { get; set; }
+        public Person Person { get; set; }
     }
 }

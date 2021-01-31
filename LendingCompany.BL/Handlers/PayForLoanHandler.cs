@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using LendingCompany.BL.Model.Dtos;
 using LendingCompany.BL.Model.Messages.Commands;
@@ -19,11 +20,19 @@ namespace LendingCompany.BL.Handlers
 
         public async Task<BaseResponse<PayForLoanDto>> Handle(PayForLoanCommand request, CancellationToken cancellationToken)
         {
-            var change = await _paymentService.FoundPayment(request.LoanId, request.Amount);
-            return new BaseResponse<PayForLoanDto>(new PayForLoanDto()
+            try
             {
-                Change = change
-            });
+                var change = await _paymentService.FoundPayment(request.LoanId, request.Amount);
+                return new BaseResponse<PayForLoanDto>(new PayForLoanDto()
+                {
+                    Change = change
+                });
+            }
+            catch (Exception e)
+            {
+                // there should be logging
+                return new BaseResponse<PayForLoanDto>("An error occurred when handling request.");
+            }
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using LendingCompany.BL.Exceptions;
 using LendingCompany.BL.Externals;
 using LendingCompany.BL.Model;
 using LendingCompany.BL.Services.Interfaces;
@@ -45,11 +44,9 @@ namespace LendingCompany.BL.Services
                     rest = await FoundPayment(loanId, rest);
                     return rest;
                 }
-                else
-                {
-                    await _uow.CompleteAsync();
-                    return 0;
-                }
+
+                await _uow.CompleteAsync();
+                return 0;
             }
 
             await _uow.CompleteAsync();

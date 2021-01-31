@@ -12,6 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services.AddScoped<ILoanRepository, LoanRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
         public static void AddServices(this IServiceCollection services)
