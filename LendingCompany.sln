@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.BL", "Lendin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.Infrastructure", "LendingCompany.Infrastructure\LendingCompany.Infrastructure.csproj", "{A66C48D7-551F-4188-BAF5-A5912DAD75E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingCompany.UnitTests", "LendingCompany.UnitTests\LendingCompany.UnitTests.csproj", "{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.UnitTests", "LendingCompany.UnitTests\LendingCompany.UnitTests.csproj", "{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LendingCompany.IntegrationTests", "LendingCompany.IntegrationTests\LendingCompany.IntegrationTests.csproj", "{0CDE1732-4C9E-456A-BE2E-7FA27316F503}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9E28925-E56C-4E11-B6CB-B3D93CB62DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CDE1732-4C9E-456A-BE2E-7FA27316F503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CDE1732-4C9E-456A-BE2E-7FA27316F503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CDE1732-4C9E-456A-BE2E-7FA27316F503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CDE1732-4C9E-456A-BE2E-7FA27316F503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

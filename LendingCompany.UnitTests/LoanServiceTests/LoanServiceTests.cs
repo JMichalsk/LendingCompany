@@ -18,7 +18,7 @@ namespace LendingCompany.UnitTests.LoanServiceTests
             var paymentServiceMock = new Mock<IPaymentService>();
             paymentServiceMock
                 .Setup(x => x.CreatePayment(It.IsAny<Guid>(), It.IsAny<double>(), It.IsAny<DateTime>()))
-                .ReturnsAsync((double baseAmount, DateTime finalPaymentDate, Guid loanId)
+                .ReturnsAsync((Guid loanId, double baseAmount, DateTime finalPaymentDate)
                     => new Payment(baseAmount, finalPaymentDate, loanId));
 
             var uowMock = new Mock<IUnitOfWork>();
@@ -28,7 +28,7 @@ namespace LendingCompany.UnitTests.LoanServiceTests
         [Test]
         public async Task CalculatePaymentsWhenInterestIsZero()
         {
-            var loan = new Loan(5, 0, 500);
+            var loan = new Loan(5, 0, 500, new Guid());
 
             var result = await _loanService.CalculatePayments(loan);
 
@@ -40,7 +40,7 @@ namespace LendingCompany.UnitTests.LoanServiceTests
         [Test]
         public async Task CalculatePaymentsWhenInterestIsInteger()
         {
-            var loan = new Loan(5, 10, 500);
+            var loan = new Loan(5, 10, 500, new Guid());
 
             var result = await _loanService.CalculatePayments(loan);
 
@@ -52,7 +52,7 @@ namespace LendingCompany.UnitTests.LoanServiceTests
         [Test]
         public async Task CalculatePaymentsWhenInterestIsNotInteger()
         {
-            var loan = new Loan(3, 3, 500);
+            var loan = new Loan(3, 3, 500, new Guid());
 
             var result = await _loanService.CalculatePayments(loan);
 

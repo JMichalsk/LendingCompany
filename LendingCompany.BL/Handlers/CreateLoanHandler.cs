@@ -29,7 +29,7 @@ namespace LendingCompany.BL.Handlers
         {
             try
             {
-                var loan = new Loan(request.NumberOfInstallments, request.Interest, request.Amount);
+                var loan = new Loan(request.NumberOfInstallments, request.Interest, request.Amount, request.PersonId);
                 var loanId = await _loanRepository.CreateLoanAsync(loan);
 
                 var loanWithPayments = await _loanService.CalculatePayments(loan);
